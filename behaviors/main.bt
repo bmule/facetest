@@ -1,0 +1,170 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "children": [
+            4,
+            6,
+            "d013823f-2263-4f48-b08a-fa604ec7b5c3",
+            "aef09007-fa49-487d-9604-04a272a02891",
+            "7f5edb37-c2f0-4df9-8e02-695d64a5f518",
+            "e2c2a936-9a03-47b8-9fa1-b95433f523ab",
+            "64b2aee7-41e8-4b83-ab59-00672ea11a2a"
+        ],
+        "decorators": [],
+        "options": {}
+    },
+    "4": {
+        "id": 4,
+        "class": "PlayAnimation",
+        "name": "Play a greeting",
+        "asset-pack": "core",
+        "parent": 1,
+        "options": {
+            "animPath": "greeting.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        }
+    },
+    "6": {
+        "id": 6,
+        "class": "PlayAudio",
+        "name": "Bawhoop",
+        "asset-pack": "core",
+        "parent": 1,
+        "options": {
+            "audioPath": "FX_Bawhoop.mp3"
+        }
+    },
+    "meta": {
+        "version": 1
+    },
+    "d013823f-2263-4f48-b08a-fa604ec7b5c3": {
+        "id": "d013823f-2263-4f48-b08a-fa604ec7b5c3",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  let jibo = require('jibo');",
+                "  console.log('make face invisible, face=',jibo.face);",
+                "  jibo.face.visible = false;",
+                "  //jibo.face.eye.visible = false;",
+                "  console.log('face =',jibo.face);",
+                "",
+                "  console.log('jibo.face.visible=',jibo.face.visible);",
+                "  console.log('jibo.face.eye.visible=',  jibo.face.eye.visible);",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "aef09007-fa49-487d-9604-04a272a02891": {
+        "id": "aef09007-fa49-487d-9604-04a272a02891",
+        "class": "TimeoutJs",
+        "name": "",
+        "options": {
+            "getTime": [
+                "() => {",
+                "    return 0;",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "e2c2a936-9a03-47b8-9fa1-b95433f523ab": {
+        "id": "e2c2a936-9a03-47b8-9fa1-b95433f523ab",
+        "class": "ExecuteScript",
+        "name": "",
+        "options": {
+            "exec": [
+                "() => {",
+                "  console.log('jibo.face.visible=',jibo.face.visible);",
+                "  console.log('jibo.face.eye.visible=',jibo.face.eye.visible);",
+                "  console.log('make face visible,before changes face=',jibo.face);",
+                "  jibo.face.visible = true;",
+                "  jibo.face.eye.visible = true;",
+                "  console.log('face =',jibo.face);",
+                "  console.log('jibo.face.visible=',jibo.face.visible);",
+                "  console.log('jibo.face.eye.visible=',jibo.face.eye.visible);",
+                "  console.log('make face visible,after changes face=',jibo.face);",
+                "  //redraw each frame",
+                "  jibo.face.renderOnlyWhenDirty = false;",
+                "  //force draw",
+                "  jibo.face.update();",
+                "  //render only when dof values change",
+                "  jibo.face.renderOnlyWhenDirty = true;",
+                "    console.log('ready for next step');",
+                "/*",
+                "  let jibo = require('jibo');",
+                "jibo.face.visible = false;",
+                "jibo.face.eye.visible = false;",
+                "console.log('face  visible');",
+                "var $ = require('jQuery');",
+                "$( \"#touchtest\" ).fadeIn();",
+                "console.log('touchtest  hide');",
+                "*/",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "7f5edb37-c2f0-4df9-8e02-695d64a5f518": {
+        "id": "7f5edb37-c2f0-4df9-8e02-695d64a5f518",
+        "class": "PlayAnimation",
+        "name": "Play a greeting",
+        "asset-pack": "core",
+        "parent": 1,
+        "options": {
+            "animPath": "greeting.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        }
+    },
+    "64b2aee7-41e8-4b83-ab59-00672ea11a2a": {
+        "id": "64b2aee7-41e8-4b83-ab59-00672ea11a2a",
+        "class": "PlayAnimation",
+        "name": "Play a greeting",
+        "asset-pack": "core",
+        "parent": 1,
+        "options": {
+            "animPath": "greeting.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "decorators": [
+            "a61724d6-0790-4563-b9ce-b5fe4c4720d0"
+        ]
+    },
+    "a61724d6-0790-4563-b9ce-b5fe4c4720d0": {
+        "id": "a61724d6-0790-4563-b9ce-b5fe4c4720d0",
+        "class": "StartOnCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  ",
+                "  //if I don' run this animation and I don't get rendering of the face",
+                "  // unless I set the face dirty flags",
+                "  return false;",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    }
+}
