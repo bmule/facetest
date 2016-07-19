@@ -46,7 +46,7 @@
     "d013823f-2263-4f48-b08a-fa604ec7b5c3": {
         "id": "d013823f-2263-4f48-b08a-fa604ec7b5c3",
         "class": "ExecuteScript",
-        "name": "",
+        "name": "1a. face visible = FALSE",
         "options": {
             "exec": [
                 "() => {",
@@ -81,7 +81,7 @@
     "e2c2a936-9a03-47b8-9fa1-b95433f523ab": {
         "id": "e2c2a936-9a03-47b8-9fa1-b95433f523ab",
         "class": "ExecuteScript",
-        "name": "",
+        "name": "1c. face visible = true, dirty flags, update face",
         "options": {
             "exec": [
                 "() => {",
@@ -89,7 +89,7 @@
                 "  console.log('jibo.face.eye.visible=',jibo.face.eye.visible);",
                 "  console.log('make face visible,before changes face=',jibo.face);",
                 "  jibo.face.visible = true;",
-                "  jibo.face.eye.visible = true;",
+                "  //jibo.face.eye.visible = true;",
                 "  console.log('face =',jibo.face);",
                 "  console.log('jibo.face.visible=',jibo.face.visible);",
                 "  console.log('jibo.face.eye.visible=',jibo.face.eye.visible);",
@@ -119,7 +119,7 @@
     "7f5edb37-c2f0-4df9-8e02-695d64a5f518": {
         "id": "7f5edb37-c2f0-4df9-8e02-695d64a5f518",
         "class": "PlayAnimation",
-        "name": "Play a greeting",
+        "name": "1b. Correct, No face expected ! Play a greeting",
         "asset-pack": "core",
         "parent": 1,
         "options": {
@@ -133,7 +133,7 @@
     "64b2aee7-41e8-4b83-ab59-00672ea11a2a": {
         "id": "64b2aee7-41e8-4b83-ab59-00672ea11a2a",
         "class": "PlayAnimation",
-        "name": "Play a greeting",
+        "name": "2. an animation will restore the face",
         "asset-pack": "core",
         "parent": 1,
         "options": {
