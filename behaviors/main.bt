@@ -11,6 +11,7 @@
             "aef09007-fa49-487d-9604-04a272a02891",
             "7f5edb37-c2f0-4df9-8e02-695d64a5f518",
             "e2c2a936-9a03-47b8-9fa1-b95433f523ab",
+            "ba0f85ce-e27d-483b-9489-39fbee787c88",
             "64b2aee7-41e8-4b83-ab59-00672ea11a2a"
         ],
         "decorators": [],
@@ -81,7 +82,7 @@
     "e2c2a936-9a03-47b8-9fa1-b95433f523ab": {
         "id": "e2c2a936-9a03-47b8-9fa1-b95433f523ab",
         "class": "ExecuteScript",
-        "name": "1c. face visible = true, dirty flags, update face",
+        "name": "1c. face visible = true",
         "options": {
             "exec": [
                 "() => {",
@@ -94,13 +95,7 @@
                 "  console.log('jibo.face.visible=',jibo.face.visible);",
                 "  console.log('jibo.face.eye.visible=',jibo.face.eye.visible);",
                 "  console.log('make face visible,after changes face=',jibo.face);",
-                "  //redraw each frame",
-                "  jibo.face.renderOnlyWhenDirty = false;",
-                "  //force draw",
-                "  jibo.face.update();",
-                "  //render only when dof values change",
-                "  jibo.face.renderOnlyWhenDirty = true;",
-                "    console.log('ready for next step');",
+                "",
                 "/*",
                 "  let jibo = require('jibo');",
                 "jibo.face.visible = false;",
@@ -143,28 +138,38 @@
                 "}"
             ]
         },
-        "decorators": [
-            "a61724d6-0790-4563-b9ce-b5fe4c4720d0"
-        ]
+        "decorators": [],
+        "skipped": true
     },
-    "a61724d6-0790-4563-b9ce-b5fe4c4720d0": {
-        "id": "a61724d6-0790-4563-b9ce-b5fe4c4720d0",
-        "class": "StartOnCondition",
-        "name": "",
+    "ba0f85ce-e27d-483b-9489-39fbee787c88": {
+        "id": "ba0f85ce-e27d-483b-9489-39fbee787c88",
+        "class": "ExecuteScript",
+        "name": "1d. dirty flags, update face",
         "options": {
-            "init": [
+            "exec": [
                 "() => {",
-                "}"
-            ],
-            "conditional": [
-                "() => {",
-                "  ",
-                "  //if I don' run this animation and I don't get rendering of the face",
-                "  // unless I set the face dirty flags",
-                "  return false;",
+                "    console.log('handle dirty flags, update face');",
+                "//redraw each frame",
+                "  jibo.face.renderOnlyWhenDirty = false;",
+                "  //force draw",
+                "  jibo.face.update();",
+                "  //render only when dof values change",
+                "  jibo.face.renderOnlyWhenDirty = true;",
+                "    console.log('ready for next step');",
+                "/*",
+                "  let jibo = require('jibo');",
+                "jibo.face.visible = false;",
+                "jibo.face.eye.visible = false;",
+                "console.log('face  visible');",
+                "var $ = require('jQuery');",
+                "$( \"#touchtest\" ).fadeIn();",
+                "console.log('touchtest  hide');",
+                "*/",
                 "}"
             ]
         },
-        "asset-pack": "core"
+        "asset-pack": "core",
+        "parent": 1,
+        "skipped": true
     }
 }
