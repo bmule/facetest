@@ -52,13 +52,15 @@
             "exec": [
                 "() => {",
                 "  let jibo = require('jibo');",
-                "  console.log('make face invisible, face=',jibo.face);",
+                "  console.log('0 jibo.face.visible=',jibo.face.visible);",
+                "  console.log('0 jibo.face.eye.visible=',  jibo.face.eye.visible);",
+                "  console.log('  face invisible, face=',jibo.face);",
                 "  jibo.face.visible = false;",
                 "  //jibo.face.eye.visible = false;",
-                "  console.log('face =',jibo.face);",
+                "  console.log('1 face =',jibo.face);",
                 "",
-                "  console.log('jibo.face.visible=',jibo.face.visible);",
-                "  console.log('jibo.face.eye.visible=',  jibo.face.eye.visible);",
+                "  console.log('1 jibo.face.visible=',jibo.face.visible);",
+                "  console.log('1 jibo.face.eye.visible=',  jibo.face.eye.visible);",
                 "}"
             ]
         },
@@ -170,6 +172,6 @@
         },
         "asset-pack": "core",
         "parent": 1,
-        "skipped": true
+        "skipped": false
     }
 }
